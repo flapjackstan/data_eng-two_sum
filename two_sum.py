@@ -11,6 +11,8 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
 '''
 
+import pytest
+
 class Solution:
     def two_sum_dictionary(self, nums: list[int], target: int) -> list[int]:
         print(f'list:{nums}', f'target: {target}')
@@ -51,10 +53,14 @@ class Solution:
                     return [index1, index1 + index2 + 1]
 
 def main():
-    solution = Solution()
 
-    two_sum = solution.two_sum_elim_list([1,12,45,60,75,76,78,90], 102)
-    print('solution:' + str(two_sum))
+    exit_code = pytest.main(["tests/","-s"])  # noqa: E501
+
+    if exit_code > 0:
+            print("See Above For Pytest Error Output!")
+
+    else:
+        print("All Tests Passed!")
 
 if __name__ == '__main__':
     main()
