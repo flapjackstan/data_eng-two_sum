@@ -1,5 +1,5 @@
 import pytest
-from two_sum import Solution
+from src.two_sum import Solution
 
 @pytest.fixture(scope='module')
 def solution_obj():
